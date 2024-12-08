@@ -4,10 +4,9 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Arrays;
-// 2 3 i 5 6
 
-public class Day2 {
-    public static void main(String[] args) {
+class Day2 {
+    public static void main(String[] args) throws IOException {
         try (BufferedReader br = new BufferedReader(new FileReader("src/day2/in.txt"))) {
             String line;
             int safe = 0;
@@ -34,8 +33,6 @@ public class Day2 {
                 }
             }
             System.out.println(safe);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
         }
     }
 
@@ -44,7 +41,7 @@ public class Day2 {
         int second = Integer.parseInt(report[1]);
         boolean is_asc = first < second;
 
-        for (int i = 0; i < report.length-1; i++) {
+        for (int i = 0; i < report.length - 1; i++) {
             // Check order
             int current = Integer.parseInt(report[i]);
             int next = Integer.parseInt(report[i + 1]);

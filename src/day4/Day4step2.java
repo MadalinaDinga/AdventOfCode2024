@@ -8,7 +8,7 @@ import java.util.List;
 
 public class Day4step2 {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         List<List<Character>> matrix = new ArrayList<>();
         int count = 0;
         try (BufferedReader bR = new BufferedReader(new FileReader("src/day4/in.txt"))) {
@@ -22,8 +22,6 @@ public class Day4step2 {
 
                 count = get_xmas_count(matrix);
             }
-        } catch (IOException e) {
-            throw new RuntimeException(e);
         }
         System.out.println(count);
 
@@ -40,8 +38,8 @@ public class Day4step2 {
         for (int i = 0; i < matrix.size(); i++) {
             for (int j = 0; j < matrix.get(i).size(); j++) {
                 if (matrix.get(i).get(j) == 'A') {
-                    boolean is_right_diagonal =  (check_direction(matrix, i, j, -1, -1, 'M') && check_direction(matrix, i, j, 1, 1, 'S')) || (check_direction(matrix, i, j, -1, -1, 'S') && check_direction(matrix, i, j, 1, 1, 'M'));
-                    boolean is_left_diagonal =  (check_direction(matrix, i, j, 1, -1, 'M') && check_direction(matrix, i, j, -1, 1, 'S')) || (check_direction(matrix, i, j, 1, -1, 'S') && check_direction(matrix, i, j, -1, 1, 'M'));
+                    boolean is_right_diagonal = (check_direction(matrix, i, j, -1, -1, 'M') && check_direction(matrix, i, j, 1, 1, 'S')) || (check_direction(matrix, i, j, -1, -1, 'S') && check_direction(matrix, i, j, 1, 1, 'M'));
+                    boolean is_left_diagonal = (check_direction(matrix, i, j, 1, -1, 'M') && check_direction(matrix, i, j, -1, 1, 'S')) || (check_direction(matrix, i, j, 1, -1, 'S') && check_direction(matrix, i, j, -1, 1, 'M'));
 
                     if (is_right_diagonal && is_left_diagonal) {
                         count++;

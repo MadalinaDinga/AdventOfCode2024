@@ -1,14 +1,13 @@
 package day3;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Day3 {
-    public static void main(String[] args) {
+class Day3 {
+    public static void main(String[] args) throws IOException {
         try (BufferedReader br = new BufferedReader(new FileReader("src/day3/in.txt"))) {
             String line;
             int sum = 0;
@@ -16,8 +15,6 @@ public class Day3 {
                 sum += get_line_sum(line);
             }
             System.out.println(sum);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
         }
     }
 

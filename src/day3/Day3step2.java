@@ -6,8 +6,8 @@ import java.io.IOException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Day3step2 {
-    public static void main(String[] args) {
+class Day3step2 {
+    public static void main(String[] args) throws IOException {
         try (BufferedReader br = new BufferedReader(new FileReader("src/day3/in.txt"))) {
             String line;
             int sum = 0;
@@ -43,8 +43,6 @@ public class Day3step2 {
                 }
             }
             System.out.println(sum);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
         }
     }
 

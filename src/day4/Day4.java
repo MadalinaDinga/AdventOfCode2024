@@ -6,11 +6,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Day4 {
+class Day4 {
 
     public static final String WANTED = "XMAS";
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         List<List<Character>> matrix = new ArrayList<>();
         int count = 0;
         try (BufferedReader bR = new BufferedReader(new FileReader("src/day4/in.txt"))) {
@@ -24,8 +24,6 @@ public class Day4 {
 
                 count = get_xmas_count(matrix);
             }
-        } catch (IOException e) {
-            throw new RuntimeException(e);
         }
         System.out.println(count);
 
